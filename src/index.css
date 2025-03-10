@@ -5,6 +5,14 @@
   src: url("./assets/fonts/PlayfairDisplay-VariableFont_wght.ttf");
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/Montserrat-VariableFont_wght.ttf");
+}
+
 @theme {
   --font-playfair: "Playfair Display";
+  --font-montserrat: "Montserrat";
+  --color-primary: #262b46;
+  --color-secondary: #6fc3df;
 }
