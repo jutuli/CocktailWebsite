@@ -1,4 +1,4 @@
-import { ReactEventHandler, useRef } from "react";
+import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -45,15 +45,13 @@ const Header = () => {
           ref={searchInput}
         />
         <button
-          className="font-montserrat bg-secondary cursor-pointer rounded-md px-5 py-2"
+          className="font-montserrat bg-secondary z-1 cursor-pointer rounded-md px-5 py-2"
           type="submit"
         >
           Search
         </button>
       </form>
-      <button className="rotate-90 py-15 text-4xl font-extralight">
-        {">>>"}
-      </button>
+      <div className="m-auto my-10 text-4xl font-extralight">&#8595;</div>
     </header>
   );
 };
