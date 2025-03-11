@@ -1,10 +1,8 @@
-import { Link } from "react-router-dom";
-
-interface iCocktailCard {
+interface ICocktailCardProps {
   name: string;
   imgUrl: string;
-  id: string;
   index: number;
+  onCardClick: () => void;
 }
 
 const cardColors = [
@@ -16,12 +14,18 @@ const cardColors = [
   "bg-lightgreen",
 ];
 
-const CocktailCard = ({ name, imgUrl, id, index }: iCocktailCard) => {
+const CocktailCard = ({
+  name,
+  imgUrl,
+  index,
+  onCardClick,
+}: ICocktailCardProps) => {
   const bgColor = cardColors[index % cardColors.length];
 
   return (
     <li
       className={`flex h-60 w-full cursor-pointer items-center justify-between text-white ${bgColor} px-10`}
+      onClick={onCardClick}
     >
       <div
         className={`flex w-full justify-between ${index % 2 === 0 ? "flex-row-reverse" : ""}`}
