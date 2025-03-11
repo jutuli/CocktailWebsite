@@ -16,8 +16,16 @@ const MainProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const getData = async () => {
+      let url = "";
       if (!link) return;
-      const url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${link}`;
+      if (link === "Alkoholfrei") {
+        url =
+          "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Non_Alcoholic";
+      } else if (link === "Zufall") {
+        url = "https://www.thecocktaildb.com/api/json/v1/1/random.php";
+      } else {
+        url = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${link}`;
+      }
       try {
         const response = await axios.get(url);
         if (response.data.drinks) {
