@@ -21,22 +21,22 @@ const CocktailCard = ({ name, imgUrl, id, index }: iCocktailCard) => {
 
   return (
     <li
-      className={`flex h-60 w-full cursor-pointer items-center justify-between text-white ${bgColor} p-4`}
+      className={`flex h-60 w-full cursor-pointer items-center justify-between text-white ${bgColor} px-10`}
     >
-      <Link to={`/cocktail/${id}`} className="block">
-        <div className="flex gap-5 px-10 md:gap-20">
-          <div className="flex flex-1/3 justify-center">
-            <img
-              src={imgUrl}
-              alt={name}
-              className="h-40 w-40 flex-shrink-0 object-cover"
-            />
-          </div>
-          <h2 className="font-montserrat flex w-40 rotate-270 items-center justify-center text-center text-xl font-semibold">
+      <div
+        className={`flex w-full justify-between ${index % 2 === 0 ? "flex-row-reverse" : ""}`}
+      >
+        <div className="flex shrink-0 justify-center">
+          <img src={imgUrl} alt={name} className="h-40 w-40 object-cover" />
+        </div>
+        <div
+          className={`flex flex-1 items-center ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
+        >
+          <h2 className="font-montserrat -rotate-90 transform px-10 text-center text-xl font-semibold md:rotate-0">
             {name}
           </h2>
         </div>
-      </Link>
+      </div>
     </li>
   );
 };
