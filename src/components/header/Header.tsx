@@ -45,7 +45,7 @@ const Header = () => {
           ref={searchInput}
         />
         <button
-          className="font-montserrat bg-secondary z-1 cursor-pointer rounded-md px-5 py-2"
+          className="font-montserrat bg-secondary cursor-pointer rounded-md px-5 py-2"
           type="submit"
         >
           Search
